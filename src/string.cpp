@@ -17,14 +17,14 @@ public:
 String:String() {
 	length = 0;
 	_str = new char[1];
-	_str[0] = 0x00;
+	_str[0] = '\0';
 	
 }
 
 String:String(const char *str) {
 	length = 0;
     	const char *temp = str;
-    	while (*(temp++) != 0x00) {
+    	while (*(temp++) != '\0') {
         length++;
     		
     	}
@@ -34,7 +34,7 @@ String:String(const char *str) {
     	}
 
     	_str = strCopy;
-    	str[length] = 0x00;
+    	str[length] = '\0';
 
 }
 
@@ -45,7 +45,7 @@ String(const char *str, unsigned count) {
 	for (int i = 0 i < length; i++) {
 		_str[i] = str[i];
 	}
-	_str[length] = 0x00;
+	_str[length] = '\0';
 	
 }
 
@@ -56,7 +56,7 @@ String(char ch, unsigned count) {
 	for (int i = 0; i < length; i++) {
 		_str[i] = ch;
 	}
-	_str[length] = 0x00;
+	_str[length] = '\0';
 }
 
 String(const String &other) {
@@ -66,18 +66,18 @@ String(const String &other) {
 	for (int i = 0; i < length; i++) {
 		_str[i] = other._str[i];
 	}
-	_str[length] = 0x00;
+	_str[length] = '\0';
 }
 
 String(String &&other) {
 	length = other.length;
 	_str = other._str;
 	other.length = 0;
-	other._str = 0x00;
+	other._str = '\0';
 }
 
 ~String() {
-	if (string[0] != 0x00) {
+	if (string[0] != '\0') {
 		delete[] _str;
 	}
 	
@@ -93,7 +93,7 @@ String &operator=(const String &other) {
 	for (int i = 0; i < length; i++) {
         	_str[i] = other._str[i];
 	}
-	_str[length] = 0x00;
+	_str[length] = '\0';
 	return *this;
 	
 }
@@ -103,7 +103,7 @@ String &operator=(String &&other) {
 	length = other.length;
     	_str = other._str;
     	other.length = 0;
-    	other.string = 0x00;
+    	other.string = '\0';
     	return *this;
     	
 }
@@ -118,7 +118,7 @@ String &operator+=(const String &suffix) {
         	temp[i] = suffix.string[i - length];
     	}
 	length += suffix.length;
-	temp[length + suffix.length] = 0x00;
+	temp[length + suffix.length] = '\0';
     	delete[] _str;
     	string = temp;
 	return *this;
@@ -128,7 +128,7 @@ String &operator+=(const String &suffix) {
 String &operator+=(const char *suffix) {
 	int suffixLength = 0;
     	const char *temp = suffix;
-    	while (*(temp++) != 0x00) {
+    	while (*(temp++) != '\0') {
         	suffixLength++;
     	}
 
@@ -155,7 +155,7 @@ String &operator+=(char suffix) {
     	}
     	
     	temp[length] = suffix;
-    	temp[length + 1] = 0x00;
+    	temp[length + 1] = '\0';
     	length++;
     	delete[] _str;
     	_str = temp;
