@@ -137,7 +137,7 @@ String &String::operator+=(const char *suffix) {
     	
     	length += suffixLength;
     	delete[] _str;
-    	_str = temp;
+    	_str = temp1;
     	return *this;
     	
 }
@@ -206,7 +206,7 @@ int String::size() const {
     
 }
 
-friend bool operator==(const String &lhs, const String &rhs) {
+bool operator==(const String &lhs, const String &rhs) {
 	if (lhs.length == rhs.length) {
         	for (int i = 0; i < lhs.length; ++i) {
             		if (lhs._srt[i] != rhs._str[i]) {
@@ -219,7 +219,7 @@ friend bool operator==(const String &lhs, const String &rhs) {
     	
 }
 
-friend bool operator<(const String &lhs, const String &rhs) {
+bool operator<(const String &lhs, const String &rhs) {
 	int size;
     	size = lhs.length <= rhs.length ? lhs.length : rhs.length;
     	
