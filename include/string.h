@@ -2,6 +2,11 @@
 #define CPP_STRING_H
 
 class String { 
+	
+private:
+	int length;
+	char *_str;
+	
 public: 
 	String();
 	String(const char *str);
