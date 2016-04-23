@@ -8,12 +8,6 @@
 #include <stdexcept>
 #include "string.h"
 
-private:
-	int length;
-	char *_str;
-
-public:
-
 String:String() {
 	length = 0;
 	_str = new char[1];
