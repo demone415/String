@@ -252,7 +252,7 @@ String operator+(const String &lhs, const char *rhs) {
 }
 
 String operator+(const char *lhs, const String &rhs) {
-	return String temp(rhs) += lhs;
+	return String(rhs) += lhs;
 	
 }
 
