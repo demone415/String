@@ -29,7 +29,7 @@ public:
 	const char at(int pos) const;
 /** /return pointer to '\0' terminated C-style string */ 
 	const char * data() const;
-	unsigned size() const;
+	int size() const;
 	friend bool operator==(const String &lhs, const String &rhs);
 	friend bool operator<(const String &lhs, const String &rhs); };
 	String operator+(const String &lhs, const String &rhs);
