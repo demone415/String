@@ -182,7 +182,7 @@ const char String::operator[](int pos) const {
 
 char &String::at(int pos) {
     	if (pos >= length) {
-        	throw std::out_of_range("");
+        	throw std::out_of_range("err");
     	}
     	return _str[pos];
     
@@ -190,7 +190,7 @@ char &String::at(int pos) {
 
 const char String::at(int pos) const {
     	if (pos >= length) {
-        	throw std::out_of_range("");
+        	throw std::out_of_range("err");
     	}
     	return _str[pos];
     	
