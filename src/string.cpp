@@ -32,7 +32,7 @@ String::String(const char *str) {
 
 }
 
-String(const char *str, unsigned count) {
+String::String(const char *str, unsigned count) {
 	length = count;
 	_str = new char[count + 1];
 	
@@ -43,7 +43,7 @@ String(const char *str, unsigned count) {
 	
 }
 
-String(char ch, unsigned count) {
+String::String(char ch, unsigned count) {
 	length = count;
 	_str = new char[count + 1];
 	
@@ -53,7 +53,7 @@ String(char ch, unsigned count) {
 	_str[length] = '\0';
 }
 
-String(const String &other) {
+String::String(const String &other) {
 	length = other.length;
 	_str = new char[other.length + 1];
 	
@@ -63,14 +63,14 @@ String(const String &other) {
 	_str[length] = '\0';
 }
 
-String(String &&other) {
+String::String(String &&other) {
 	length = other.length;
 	_str = other._str;
 	other.length = 0;
 	other._str = '\0';
 }
 
-~String() {
+String::~String() {
 	if (_str[0] != '\0') {
 		delete[] _str;
 	}
