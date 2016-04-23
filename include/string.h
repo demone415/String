@@ -21,8 +21,8 @@ public:
 	String & operator+=(const char *suffix);
 	String & operator+=(char suffix);
 	void swap(String &other);
-	char & operator[](unsigned pos);
-	const char operator[](unsigned pos) const;
+	char & operator[](int pos);
+	const char operator[](int pos) const;
 /** throws an exception if pos >= size() */ 
 	char & at(unsigned pos);
 /** throws an exception if pos >= size() */ 
