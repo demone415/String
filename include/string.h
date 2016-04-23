@@ -26,7 +26,7 @@ public:
 	const char * data() const;
 	unsigned size() const;
 	friend bool operator==(const String &lhs, const String &rhs);
-	friend bool operator<(const String &lhs, const String &rhs); };
+	friend bool operator<(const String &lhs, const String &rhs);
 	String operator+(const String &lhs, const String &rhs);
 	String operator+(const String &lhs, const char *rhs);
 	String operator+(const char *lhs, const String &rhs);
