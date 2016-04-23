@@ -209,7 +209,7 @@ int String::size() const {
 bool operator==(const String &lhs, const String &rhs) {
 	if (lhs.length == rhs.length) {
         	for (int i = 0; i < lhs.length; ++i) {
-            		if (lhs._srt[i] != rhs._str[i]) {
+            		if (lhs._str[i] != rhs._str[i]) {
                 		return false;
             		}
         	}
