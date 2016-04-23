@@ -36,7 +36,7 @@ String::String(const char *str, unsigned count) {
 	length = count;
 	_str = new char[count + 1];
 	
-	for (int i = 0 i < length; i++) {
+	for (int i = 0; i < length; i++) {
 		_str[i] = str[i];
 	}
 	_str[length] = '\0';
@@ -109,7 +109,7 @@ String &String::operator+=(const String &suffix) {
         	temp[i] = _str[i];
     	}
     	for (int i = length; i < length + suffix.length; ++i) {
-        	temp[i] = suffix.string[i - length];
+        	temp[i] = suffix._str[i - length];
     	}
 	length += suffix.length;
 	temp[length + suffix.length] = '\0';
@@ -125,15 +125,15 @@ String &String::operator+=(const char *suffix) {
     	while (*(temp++) != '\0') {
         	suffixLength++;
     	}
-
-    	char *temp = new char[length + suffixLength + 1];
+	
+    	char *temp1 = new char[length + suffixLength + 1];
     	for (int i = 0; i < length; ++i) {
-        	temp[i] = _str[i];
+        	temp1[i] = _str[i];
     	}
     	for (int i = length; i < length + suffixLength; ++i) {
-        	temp[i] = suffix[i - length];
+        	temp1[i] = suffix[i - length];
     	}
-    	temp[length + suffixLength] = '\0';
+    	temp1[length + suffixLength] = '\0';
     	
     	length += suffixLength;
     	delete[] _str;
@@ -164,18 +164,18 @@ void String::swap(String &other) {
     	tempLength = length;
     	temp = _str;
     	length = other.length;
-    	_srt = other._str;
+    	_str = other._str;
     	other.length = tempLength;
-    	other._srt = temp;
+    	other._str = temp;
     	
 }
 
-char &operator[](unsigned pos) {
+char &String::operator[](int pos) {
 	return _str[pos];
 	
 }
 
-const char operator[](unsigned pos) const {
+const char String::operator[](int pos) const {
 	return _str[pos];
 	
 }
