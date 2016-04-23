@@ -28,7 +28,7 @@ String:String(const char *str) {
     	}
 
     	_str = strCopy;
-    	str[length] = '\0';
+    	_str[length] = '\0';
 
 }
 
@@ -71,7 +71,7 @@ String(String &&other) {
 }
 
 ~String() {
-	if (string[0] != '\0') {
+	if (_str[0] != '\0') {
 		delete[] _str;
 	}
 	
@@ -97,7 +97,7 @@ String &operator=(String &&other) {
 	length = other.length;
     	_str = other._str;
     	other.length = 0;
-    	other.string = '\0';
+    	other._str = '\0';
     	return *this;
     	
 }
@@ -114,7 +114,7 @@ String &operator+=(const String &suffix) {
 	length += suffix.length;
 	temp[length + suffix.length] = '\0';
     	delete[] _str;
-    	string = temp;
+    	_str = temp;
 	return *this;
 	
 }
@@ -126,9 +126,9 @@ String &operator+=(const char *suffix) {
         	suffixLength++;
     	}
 
-    	char *concat = new char[length + suffixLength + 1];
+    	char *temp = new char[length + suffixLength + 1];
     	for (int i = 0; i < length; ++i) {
-        	concat[i] = string[i];
+        	temp[i] = _str[i];
     	}
     	for (int i = length; i < length + suffixLength; ++i) {
         	temp[i] = suffix[i - length];
