@@ -8,14 +8,14 @@
 #include <stdexcept>
 #include "string.h"
 
-String:String() {
+String::String() {
 	length = 0;
 	_str = new char[1];
 	_str[0] = '\0';
 	
 }
 
-String:String(const char *str) {
+String::String(const char *str) {
 	length = 0;
     	const char *temp = str;
     	while (*(temp++) != '\0') {
