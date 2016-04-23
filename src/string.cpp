@@ -79,7 +79,7 @@ String::~String() {
 
 // commencing operations
 
-String &operator=(const String &other) {
+String &String::operator=(const String &other) {
 	delete[] _str;
 	length = other.length;
 	_str = new char[length + 1];
@@ -92,7 +92,7 @@ String &operator=(const String &other) {
 	
 }
 
-String &operator=(String &&other) {
+String &String::operator=(String &&other) {
 	delete[] _str;
 	length = other.length;
     	_str = other._str;
@@ -102,7 +102,7 @@ String &operator=(String &&other) {
     	
 }
 
-String &operator+=(const String &suffix) {
+String &String::operator+=(const String &suffix) {
 	char *temp = new char[length + suffix.length + 1];
 	
 	for (int i = 0; i < length; ++i) {
@@ -119,7 +119,7 @@ String &operator+=(const String &suffix) {
 	
 }
 
-String &operator+=(const char *suffix) {
+String &String::operator+=(const char *suffix) {
 	int suffixLength = 0;
     	const char *temp = suffix;
     	while (*(temp++) != '\0') {
@@ -142,7 +142,7 @@ String &operator+=(const char *suffix) {
     	
 }
 
-String &operator+=(char suffix) {
+String &String::operator+=(char suffix) {
 	char *temp = new char[length + 2];
     	for (int i = 0; i < length; ++i) {
         	temp[i] = _str[i];
@@ -157,7 +157,7 @@ String &operator+=(char suffix) {
     	
 }
 
-void swap(String &other) {
+void String::swap(String &other) {
 	int tempLength;
 	char *temp;
     	
@@ -201,7 +201,7 @@ const char *String::data() const {
     
 }
 
-unsigned String::size() const {
+int String::size() const {
     	return length;
     
 }
