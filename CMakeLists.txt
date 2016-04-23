@@ -12,9 +12,10 @@ endif()
 include_directories(Catch/include)
 include_directories(include)
 
-
+enable_testing()
 
 set(SOURCES src/string.cpp)
 
-add_executable(String ${SOURCES})
+add_executable(test tests/test.cpp ${SOURCES})
 
+add_test(NAME ${PROJECT_NAME} COMMAND test)
