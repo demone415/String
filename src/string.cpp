@@ -4,7 +4,6 @@
 /* demone415 at gmail dot com
 /* ---------------
 */
-#include <stddef.h>
 #include <stdexcept>
 #include "string.h"
 
