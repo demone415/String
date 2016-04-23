@@ -4,8 +4,9 @@
 /* demone415 at gmail dot com
 /* ---------------
 */
-
-#include "../include/string.h"
+#include <stddef.h>
+#include <stdexcept>
+#include "string.h"
 
 private:
 	int length;
