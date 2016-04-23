@@ -10,7 +10,7 @@
 
 private:
 	int length;
-	char _str;
+	char *_str;
 
 public:
 
