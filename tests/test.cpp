@@ -7,7 +7,7 @@
 
 TEST_CASE("TEST 1") {
     String s;
-    REQUIRE(*(s.data()) == 0x00);
+    REQUIRE(*(s.data()) == '\0');
     REQUIRE(s.size() == 0);
 }
 
@@ -39,7 +39,7 @@ TEST_CASE("Test 4") {
     for (unsigned i = 0; i < A.size(); ++i) {
         REQUIRE(B == *(pt++));
     }
-    REQUIRE(0x00 == *pt);
+    REQUIRE('\0' == *pt);
 }
 
 TEST_CASE("Test5") {
@@ -60,7 +60,7 @@ TEST_CASE("Test6") {
         REQUIRE(C[i] == A[i]);
     }
     REQUIRE(B.size() == 0);
-    REQUIRE(*(B.data()) == 0x00);
+    REQUIRE(*(B.data()) == '\0');
 }
 
 TEST_CASE ("Test_assigment1") {
@@ -82,7 +82,7 @@ TEST_CASE ("Test_assigment2") {
         REQUIRE(C[i] == A[i]);
     }
     REQUIRE(B.size() == 0);
-    REQUIRE(*(B.data()) == 0x00);
+    REQUIRE(*(B.data()) == '\0');
 }
 
 TEST_CASE ("Test_plus_assigment_1") {
