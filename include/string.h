@@ -24,9 +24,9 @@ public:
 	char & operator[](int pos);
 	const char operator[](int pos) const;
 /** throws an exception if pos >= size() */ 
-	char & at(unsigned pos);
+	char & at(int pos);
 /** throws an exception if pos >= size() */ 
-	const char at(unsigned pos) const;
+	const char at(int pos) const;
 /** /return pointer to '\0' terminated C-style string */ 
 	const char * data() const;
 	unsigned size() const;
